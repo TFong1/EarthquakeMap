@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report Version="2.0" Name="Top 5 High Risk Areas" Layer="False" TOCField="NAMELSAD" DatasetMode="1" StartingPageNumber="1">
+	<DataSource Name="HighRiskAreas" BrowseName="HighRiskAreas" Type="10" FullName="">
+		<Workspace WorkspaceType="1" PathName="D:\Documents\School\GEOG 334\Final Project\Earthquake.gdb">
+			<Property Name="DATABASE" Value="D:\Documents\School\GEOG 334\Final Project\Earthquake.gdb" />
+		</Workspace>
+	</DataSource>
+	<SourceFields>
+		<Field Name="OBJECTID" SafeName="OBJECTID" Type="6" SortAsc="True" />
+		<Field Name="NAMELSAD" SafeName="NAMELSAD" Type="4" SortAsc="True" />
+		<Field Name="Cnt_NAMELSAD" SafeName="Cnt_NAMELSAD" Type="1" SortAsc="True" />
+		<Field Name="Sum_Shape_Area" SafeName="Sum_Shape_Area" Type="3" SortAsc="True" />
+		<Field Name="AreaInMiles" SafeName="AreaInMiles" Type="3" SortAsc="False" />
+	</SourceFields>
+	<ReportFields>
+		<Field Name="NAMELSAD" />
+		<Field Name="AreaInMiles" />
+	</ReportFields>
+	<SortFields>
+		<Field Name="AreaInMiles" />
+	</SortFields>
+	<ReportStyle Name="Tacoma" UserStyle="False">
+		<SectionStyle Type="0">
+			<Font Size="20" Style="Regular" Color="#7F001B">Microsoft Sans Serif</Font>
+		</SectionStyle>
+		<SectionStyle Type="1" BackColor="#C7C5BC">
+			<Font Size="9" Style="Regular" Color="#F9F9F7">Arial</Font>
+		</SectionStyle>
+		<SectionStyle Type="2">
+			<Font Size="9" Style="Bold" Color="#CF5216">Arial</Font>
+		</SectionStyle>
+		<DetailSectionStyle Type="3">
+			<Font Size="9" Style="Regular" Color="#000000">Arial</Font>
+		</DetailSectionStyle>
+		<SectionStyle Type="4">
+			<Font Size="8" Style="Regular" Color="#C7C5BC">Arial</Font>
+		</SectionStyle>
+		<SectionStyle Type="5">
+			<Font Size="8" Style="Regular" Color="#C7C5BC">Arial</Font>
+		</SectionStyle>
+		<SectionStyle Type="6">
+			<Font Size="8" Style="Regular" Color="#C7C5BC">Arial</Font>
+		</SectionStyle>
+	</ReportStyle>
+	<ActiveReportsLayout Version="3.1" PrintWidth="4260" DocumentName="ARNet Document" ScriptLang="C#" MasterReport="0">
+		<StyleSheet>
+			<Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+			<Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+			<Style Name="Heading2" Value="font-family: Times New Roman; font-size: 14pt; font-weight: bold; font-style: italic; " />
+			<Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+		</StyleSheet>
+		<Sections>
+			<Section Type="ReportHeader" Name="ReportHeader" Height="761" BackColor="16777215">
+				<Control Type="AR.Label" Name="lblReportTitle" Left="0" Top="72" Width="5140" Height="620" Caption="Top 5 High Risk Areas" Style="color: #7F001B; font-size: 20pt; font-family: Microsoft Sans Serif; vertical-align: middle; " />
+			</Section>
+			<Section Type="PageHeader" Name="pageHeader" Height="464" BackStyle="1" BackColor="12371399">
+				<Control Type="AR.Label" Name="lblNAMELSAD" Left="0" Top="0" Width="1980" Height="270" Caption="County" Style="color: #F9F9F7; background-color: #C7C5BC; font-size: 9pt; white-space: nowrap; " />
+				<Control Type="AR.Label" Name="lblAreaInMiles" Left="2610" Top="0" Width="1620" Height="450" Caption="Earthquake Risk Area In Sq. Miles" Style="color: #F9F9F7; text-align: left; background-color: #C7C5BC; font-size: 9pt; white-space: inherit; " />
+			</Section>
+			<Section Type="Detail" Name="detail" Height="299" BackColor="16777215">
+				<Control Type="AR.Field" Name="txtNAMELSAD" DataField="NAMELSAD" Left="0" Top="0" Width="2160" Height="270" Text="NAMELSAD" Style="color: #000000; font-size: 9pt; " />
+				<Control Type="AR.Field" Name="txtAreaInMiles" DataField="AreaInMiles" Left="2700" Top="0" Width="1260" Height="300" Text="AreaInMiles" OutputFormat="#,##0.00" Style="color: #000000; text-align: right; font-size: 9pt; " />
+			</Section>
+			<Section Type="PageFooter" Name="pageFooter" Height="299" BackColor="16777215">
+				<Control Type="AR.ReportInfo" Name="rptInfoPgNo" Left="1980" Top="0" Width="5400" Height="288" FormatString="Page {PageNumber} of {PageCount}" Style="color: #C7C5BC; text-align: center; font-size: 8pt; " />
+			</Section>
+			<Section Type="ReportFooter" Name="ReportFooter" Height="0" BackColor="16777215" />
+		</Sections>
+		<ReportComponentTray />
+		<PageSettings TopMargin="720" Orientation="1" />
+		<Parameters />
+	</ActiveReportsLayout>
+</Report>
